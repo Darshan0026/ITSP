@@ -1,0 +1,26 @@
+void loop() {
+  // put your main code here, to run repeatedly:
+  if(wifiSerial.available()>0){
+
+    String message = readWifiSerialMessage();
+    
+    if(find(message,"red")){
+      if(message(4)<'2'){
+        digitalWrite(13,LOW);
+        wait 5000000;
+        digitalWrite(13,HIGH);
+}
+      else
+      if(find(message,"green")){
+        digitalWrite(13,HIGH);
+}
+else
+if(find(message,"red")){
+         digitalWrite(13,HIGH);
+}
+else{
+      sendData("\nErrRead");                 //Command ERROR CODE for UNABLE TO READ
+    }
+  }
+
+}
